@@ -60,7 +60,8 @@ After installation, the dashboard was successfully accessible.
 ```text
 https://<WAZUH-SERVER-IP>
 ```
-<img width="3183" height="1088" alt="Screenshot 2026-08-11 182104" src="https://github.com/user-attachments/assets/8f453445-aee7-4148-ab5f-b80b3daf3a9e" />
+<img width="2145" height="733" alt="ChatGPT Image Aug 11, 2026, 06_42_54 PM" src="https://github.com/user-attachments/assets/5e33d1eb-94ae-48f7-a4d6-128bdf230165" />
+
 
 ---
 
