@@ -70,8 +70,11 @@ https://<WAZUH-SERVER-IP>
 A Wazuh agent was installed on the Raspberry Pi and configured to communicate with the Wazuh server.
 
 ```bash
-# Raspberry Pi agent installation
-# TODO
+wget https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.14.7-1_arm64.deb && sudo WAZUH_MANAGER='manager_IP' WAZUH_AGENT_GROUP='default' WAZUH_AGENT_NAME='agent_name' dpkg -i ./wazuh-agent_4.14.7-1_arm64.deb
+
+sudo systemctl daemon-reload
+sudo systemctl enable wazuh-agent
+sudo systemctl start wazuh-agent
 ```
 
 The Raspberry Pi was successfully registered as an active Linux endpoint.
@@ -83,8 +86,9 @@ The Raspberry Pi was successfully registered as an active Linux endpoint.
 The Wazuh agent was then installed on the Windows 11 workstation.
 
 ```powershell
-# Windows agent installation
-# TODO
+Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.14.7-1.msi -OutFile $env:tmp\wazuh-agent; msiexec.exe /i $env:tmp\wazuh-agent /q WAZUH_MANAGER='manager_IP' WAZUH_AGENT_NAME='agent_name'
+
+NET START Wazuh
 ```
 
 The Windows PC was successfully connected and appeared as an active endpoint in the dashboard.
