@@ -107,38 +107,42 @@ The current Wazuh environment is fully functional.
 
 Both monitored endpoints are sending data to the central Wazuh server.
 
----
 
-## Screenshots
+## 7. SSH Brute-Force Detection Test with Hydra 🐉
 
-```text
-screenshots/
-├── wazuh-dashboard.png
-├── raspberry-pi-agent.png
-└── windows-agent.png
-```
+To verify that Wazuh correctly detects suspicious authentication activity, a controlled SSH brute-force simulation was performed against the Raspberry Pi.
 
-Example:
+The test environment consisted of:
 
-```markdown
-![Wazuh Dashboard](screenshots/wazuh-dashboard.png)
-```
+* **Source:** Kali Linux VM
+* **Target:** Raspberry Pi 3B
+* **Service:** SSH
+* **Monitoring:** Wazuh Agent installed on the Raspberry Pi
+* **Connection:** Tailscale network
 
----
+Multiple failed SSH authentication attempts were generated from the Kali Linux VM against the Raspberry Pi.
 
-## Next Steps
+The Raspberry Pi recorded the failed login attempts in its authentication logs, which were collected and forwarded to the Wazuh Manager by the Wazuh Agent.
 
-Planned improvements:
+### Detection in Wazuh
 
-* Analyze Wazuh alerts
-* Review detected vulnerabilities
-* Configure File Integrity Monitoring
-* Test security event detection
-* Create custom detection rules
-* Perform basic attack simulations
-* Document troubleshooting and network configuration
+The generated authentication activity was successfully detected by Wazuh and appeared in the Wazuh Dashboard as SSH-related security events.
 
----
+This confirms that:
+
+* the Raspberry Pi agent is communicating correctly with the Wazuh Manager,
+* Linux authentication logs are being collected,
+* Wazuh rules are processing failed SSH authentication attempts,
+* security events from the remote Raspberry Pi are visible in the central Wazuh Dashboard.
+
+### Result
+
+**SSH brute-force detection: Successful ✅**
+**Comment:** only a few visible ssh tries are caused by low computing capacity of RPI 3B.
+> The test was performed only against systems within the controlled lab environment.
+
+<img width="1580" height="654" alt="Screenshot 2026-08-11 201949" src="https://github.com/user-attachments/assets/529c7804-551e-47ce-bdac-01571c26e258" />
+
 
 ## Status
 
