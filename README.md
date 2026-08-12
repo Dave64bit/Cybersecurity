@@ -119,7 +119,7 @@ The test environment consisted of:
 * **Monitoring:** Wazuh Agent installed on the Raspberry Pi
 * **Connection:** Tailscale network
 
-Using brute force tool Hydra v9.7 i generated SSH login attempts with command: 
+Using brute force tool Hydra v9.7 I generated SSH login attempts with command: 
 ```bash
 hydra -l admin -P pass.txt -t 4 ssh://<Raspberry IP adress>
 ```
@@ -128,6 +128,9 @@ The Raspberry Pi recorded the failed login attempts in its authentication logs, 
 ### Detection in Wazuh
 
 The generated authentication activity was successfully detected by Wazuh and appeared in the Wazuh Dashboard as SSH-related security events.
+
+<img width="1575" height="546" alt="Screenshot_2026-08-12_04_36_39" src="https://github.com/user-attachments/assets/7a82f55d-63ad-46e2-9450-c20ec5ba914b" />
+
 
 This confirms that:
 
