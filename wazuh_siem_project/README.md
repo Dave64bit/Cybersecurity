@@ -195,6 +195,7 @@ Using Hydra v9.7 I tested if siem will respond with the pre-configured rules.
 ```bash
 hydra -l admin -P pass.txt 192.168.3.136 http-post-form "/login.php:username=^USER^&password=^PASS^:F=Invalid username or password "
 ```
+<img width="2841" height="117" alt="image" src="https://github.com/user-attachments/assets/3de0eab4-8661-4402-bfce-eb03c58676aa" />
 
 Alert verified in the Wazuh Dashboard
 Alert confirmed with rule.id 100101, level 7
@@ -211,11 +212,3 @@ Result
 -Web login brute-force detection: Successful ✅
 
 -Comment: rule.id 100101 (level 7) triggers reliably on failed logins, with correlation confirmed across multiple repeated attempts.
-
-Status: 12.8.2026
-
-🚧 Work in Progress
-
-Current milestone:
-
-Wazuh server successfully deployed with Raspberry Pi and Windows 11 endpoints connected and monitored.
