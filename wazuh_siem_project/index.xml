@@ -1,0 +1,26 @@
+<group name="login_lab,authentication,">
+
+  <rule id="100100" level="3">
+    <decoded_as>json</decoded_as>
+    <field name="event">^login$</field>
+    <field name="result">^success$</field>
+    <description>Login Lab: successful login for $(username) from $(src_ip)</description>
+  </rule>
+
+  <rule id="100101" level="7">
+    <decoded_as>json</decoded_as>
+    <field name="event">^login$</field>
+    <field name="result">^failure$</field>
+    <description>Login Lab: failed login for $(username) from $(src_ip)</description>
+  </rule>
+
+  <rule id="100102" level="10" frequency="5" timeframe="60">
+    <if_matched_sid>100101</if_matched_sid>
+    <same_field>src_ip</same_field>
+    <description>Login Lab: multiple failed login attempts from $(src_ip)</description>
+    <mitre>
+      <id>T1110</id>
+    </mitre>
+  </rule>
+
+</group>
