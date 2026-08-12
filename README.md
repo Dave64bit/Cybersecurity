@@ -141,9 +141,9 @@ This confirms that:
 
 ### Result
 
-**SSH brute-force detection: Successful ✅**
-
+**SSH brute-force detection: Successful ✅**\n
 **Comment:** only a few visible ssh tries are caused by low computing capacity of RPI 3B.
+
 > The test was performed only against systems within the controlled lab environment.
 
 
