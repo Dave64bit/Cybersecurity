@@ -4,7 +4,6 @@
 
 This project documents the creation of a small **PHP login lab application** used to generate realistic web authentication events for security monitoring and detection testing (e.g.[wazuh](wazuh_siem_project/README.md))
 
-. 
 
 The application includes:
 
@@ -174,13 +173,3 @@ The login lab application is fully functional and ready to be used as a log sour
 | Result display        | ✅ Working    |
 | JSON logging           | ✅ Working    |
 | `www-data` permissions | ✅ Configured |
-
----
-
-## Status
-
-🚧 **Work in Progress**
-
-Current milestone:
-
-> Login lab web application built, logging login attempts in JSON format to `/var/log/login-lab.log`. Next step: forward this log to a Wazuh Agent for brute-force detection testing.
