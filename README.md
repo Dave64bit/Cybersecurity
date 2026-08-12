@@ -51,8 +51,7 @@ The installation includes:
 * Wazuh Dashboard
 
 ```bash
-# Wazuh installation commands
-# TODO
+curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
 ```
 
 After installation, the dashboard was successfully accessible.
