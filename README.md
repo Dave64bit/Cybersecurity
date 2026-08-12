@@ -107,7 +107,7 @@ The current Wazuh environment is fully functional.
 Both monitored endpoints are sending data to the central Wazuh server.
 
 
-## 7. SSH Brute-Force Detection Test with Hydra 🐉
+## 5. SSH Brute-Force Detection Test with Hydra 🐉
 
 To verify that Wazuh correctly detects suspicious authentication activity, a controlled SSH brute-force simulation was performed against the Raspberry Pi.
 
@@ -119,8 +119,10 @@ The test environment consisted of:
 * **Monitoring:** Wazuh Agent installed on the Raspberry Pi
 * **Connection:** Tailscale network
 
-Multiple failed SSH authentication attempts were generated from the Kali Linux VM against the Raspberry Pi.
-
+Using brute force tool Hydra v9.7 i generated SSH login attempts with command: 
+```bash
+hydra -l admin -P pass.txt -t 4 ssh://<Raspberry IP adress>
+```
 The Raspberry Pi recorded the failed login attempts in its authentication logs, which were collected and forwarded to the Wazuh Manager by the Wazuh Agent.
 
 ### Detection in Wazuh
