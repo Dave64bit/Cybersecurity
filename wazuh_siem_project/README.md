@@ -148,7 +148,7 @@ This confirms that:
 
 > The test was performed only against systems within the controlled lab environment.
 
-6. Web Login Brute-Force Detection Test (Custom Rules) 🔐
+## 6. Web Login Brute-Force Detection Test (Custom Rules) 🔐
 
 To extend detection coverage beyond SSH, a custom web login lab was built to test Wazuh's ability to detect brute-force attempts against a web application using custom decoders and rules.
 
