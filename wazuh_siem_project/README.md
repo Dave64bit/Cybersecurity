@@ -1,0 +1,159 @@
+# Wazuh SIEM Lab
+
+## Overview
+
+This project documents the deployment of a small **Wazuh SIEM environment** used to monitor multiple endpoints.
+
+The current setup includes:
+
+* **Kali Linux VM** running the Wazuh server and dashboard
+* **Raspberry Pi 3B** connected as a Linux agent
+* **Windows 11 PC** connected as a Windows agent
+
+Both endpoints are successfully connected and visible in the Wazuh Dashboard.
+
+---
+
+## Architecture
+
+```text
+                    Kali Linux VM
+                  ┌─────────────────┐
+                  │   Wazuh Server  │
+                  │ Wazuh Dashboard │
+                  └────────┬────────┘
+                           │
+               ┌───────────┴───────────┐
+               │                       │
+               ▼                       ▼
+        Raspberry Pi              Windows 11
+        Wazuh Agent               Wazuh Agent
+```
+
+---
+
+## Deployment
+
+### 1. Kali Linux VM
+
+A Kali Linux virtual machine was deployed as the central Wazuh server using Oracle Virtualbox.
+
+<img width="1314" height="118" alt="image" src="https://github.com/user-attachments/assets/a042753d-5422-4119-ba9e-4d046d986b4f" />
+
+### 2. Wazuh Installation
+
+Wazuh was installed directly on the Kali Linux VM.
+
+The installation includes:
+
+* Wazuh Manager
+* Wazuh Indexer
+* Wazuh Dashboard
+
+```bash
+curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
+```
+
+After installation, the dashboard was successfully accessible.
+
+```text
+https://<WAZUH-SERVER-IP>
+```
+<img width="2145" height="733" alt="ChatGPT Image Aug 11, 2026, 06_42_54 PM" src="https://github.com/user-attachments/assets/5e33d1eb-94ae-48f7-a4d6-128bdf230165" />
+
+
+---
+
+### 3. Raspberry Pi Agent
+
+A Wazuh agent was installed on the Raspberry Pi and configured to communicate with the Wazuh server.
+
+```bash
+wget https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.14.7-1_arm64.deb && sudo WAZUH_MANAGER='manager_IP' WAZUH_AGENT_GROUP='default' WAZUH_AGENT_NAME='agent_name' dpkg -i ./wazuh-agent_4.14.7-1_arm64.deb
+
+sudo systemctl daemon-reload
+sudo systemctl enable wazuh-agent
+sudo systemctl start wazuh-agent
+```
+
+The Raspberry Pi was successfully registered as an active Linux endpoint.
+
+---
+
+### 4. Windows 11 Agent
+
+The Wazuh agent was then installed on the Windows 11 workstation.
+
+```powershell
+Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.14.7-1.msi -OutFile $env:tmp\wazuh-agent; msiexec.exe /i $env:tmp\wazuh-agent /q WAZUH_MANAGER='manager_IP' WAZUH_AGENT_NAME='agent_name'
+
+NET START Wazuh
+```
+
+The Windows PC was successfully connected and appeared as an active endpoint in the dashboard.
+
+---
+
+## Current Result
+
+The current Wazuh environment is fully functional.
+
+| Device        | Role          | Status    |
+| ------------- | ------------- | --------- |
+| Kali Linux VM | Wazuh Server  | ✅ Running |
+| Raspberry Pi  | Linux Agent   | ✅ Active  |
+| Windows 11 PC | Windows Agent | ✅ Active  |
+
+Both monitored endpoints are sending data to the central Wazuh server.
+
+
+## 5. SSH Brute-Force Detection Test with Hydra 🐉
+
+To verify that Wazuh correctly detects suspicious authentication activity, a controlled SSH brute-force simulation was performed against the Raspberry Pi.
+
+The test environment consisted of:
+
+* **Source:** Kali Linux VM
+* **Target:** Raspberry Pi 3B
+* **Service:** SSH
+* **Monitoring:** Wazuh Agent installed on the Raspberry Pi
+* **Connection:** Tailscale network
+
+Using brute force tool Hydra v9.7 I generated SSH login attempts with command: 
+```bash
+hydra -l admin -P pass.txt -t 4 ssh://<Raspberry IP adress>
+```
+The Raspberry Pi recorded the failed login attempts in its authentication logs, which were collected and forwarded to the Wazuh Manager by the Wazuh Agent.
+
+### Detection in Wazuh
+
+The generated authentication activity was successfully detected by Wazuh and appeared in the Wazuh Dashboard as SSH-related security events.
+
+<img width="1575" height="546" alt="Screenshot_2026-08-12_04_36_39" src="https://github.com/user-attachments/assets/7a82f55d-63ad-46e2-9450-c20ec5ba914b" />
+
+
+This confirms that:
+
+* the Raspberry Pi agent is communicating correctly with the Wazuh Manager,
+* Linux authentication logs are being collected,
+* Wazuh rules are processing failed SSH authentication attempts,
+* security events from the remote Raspberry Pi are visible in the central Wazuh Dashboard.
+
+### Result
+
+**-SSH brute-force detection: Successful ✅**
+
+**-Comment: only a few visible ssh tries are caused by low computing capacity of RPI 3B.**
+
+
+> The test was performed only against systems within the controlled lab environment.
+
+
+
+## Status
+
+🚧 **Work in Progress**
+
+Current milestone:
+
+> Wazuh server successfully deployed with Raspberry Pi and Windows 11 endpoints connected and monitored.
