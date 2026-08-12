@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project documents the creation of a small **PHP login lab application** used to generate realistic web authentication events for security monitoring and detection testing (e.g. [SIEM-SOAR](wazuh_siem_project). 
+This project documents the creation of a small **PHP login lab application** used to generate realistic web authentication events for security monitoring and detection testing (e.g. [SIEM-SOAR](../README.md). 
 
 The application includes:
 
