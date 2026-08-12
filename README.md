@@ -145,7 +145,6 @@ This confirms that:
 **Comment:** only a few visible ssh tries are caused by low computing capacity of RPI 3B.
 > The test was performed only against systems within the controlled lab environment.
 
-<img width="1580" height="654" alt="Screenshot 2026-08-11 201949" src="https://github.com/user-attachments/assets/529c7804-551e-47ce-bdac-01571c26e258" />
 
 
 ## Status
