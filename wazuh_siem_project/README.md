@@ -148,12 +148,74 @@ This confirms that:
 
 > The test was performed only against systems within the controlled lab environment.
 
+6. Web Login Brute-Force Detection Test (Custom Rules) 🔐
 
+To extend detection coverage beyond SSH, a custom web login lab was built to test Wazuh's ability to detect brute-force attempts against a web application using custom decoders and rules.
 
-## Status
+The test environment consisted of:
 
-🚧 **Work in Progress**
+Target: Apache web server (hosted on raspberry pi) hosting a custom PHP login form
+Service: HTTP login (index.php)
+Monitoring: Wazuh Agent with a custom <localfile> log source
+Log format: Custom JSON login log
+
+A custom PHP login form with JSON-based attempt logging was built for this test. Setup details are documented separately: [link to login-lab form setup]
+
+6.1 Wazuh Agent Configuration
+
+The Wazuh agent was configured to collect and forward the new log source.
+
+Installation / configuration of the Wazuh agent
+Wazuh Manager IP configured
+<localfile> block added to ossec.conf:
+xml
+<localfile>
+  <log_format>json</log_format>
+  <location>/var/log/login-lab.log</location>
+</localfile>
+JSON log format set for correct field parsing
+Wazuh agent restarted:
+bash
+sudo systemctl restart wazuh-agent
+6.2 Custom Wazuh Rules
+
+Custom detection rules were created on the Wazuh Manager to classify login events:
+
+Rule for a successful login
+Rule for a failed login
+Rule for repeated failed login attempts (brute-force correlation)
+Wazuh Manager restarted:
+bash
+sudo systemctl restart wazuh-manager
+Detection in Wazuh
+
+6.3 Hydra brute force attempt
+
+Using Hydra v9.7 I tested if siem will respond with the pre-configured rules.
+```bash
+hydra -l admin -P pass.txt 192.168.3.136 http-post-form "/login.php:username=^USER^&password=^PASS^:F=Invalid username or password "
+```
+
+Alert verified in the Wazuh Dashboard
+Alert confirmed with rule.id 100101, level 7
+Correlation of multiple failed login attempts tested to confirm brute-force detection
+
+This confirms that:
+
+the custom login log is being collected correctly by the Wazuh Agent,
+the custom decoder correctly parses the JSON login events,
+the custom rules correctly classify successful vs. failed login attempts,
+repeated failed logins are correlated and escalated as brute-force alerts.
+Result
+
+-Web login brute-force detection: Successful ✅
+
+-Comment: rule.id 100101 (level 7) triggers reliably on failed logins, with correlation confirmed across multiple repeated attempts.
+
+Status: 12.8.2026
+
+🚧 Work in Progress
 
 Current milestone:
 
-> Wazuh server successfully deployed with Raspberry Pi and Windows 11 endpoints connected and monitored.
+Wazuh server successfully deployed with Raspberry Pi and Windows 11 endpoints connected and monitored.
