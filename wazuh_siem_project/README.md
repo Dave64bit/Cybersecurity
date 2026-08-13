@@ -161,7 +161,7 @@ Log format: Custom JSON login log
 
 A custom PHP login form with JSON-based attempt logging was built for this test. Setup details are documented separately:[Login Lab](/login-lab-README.md)
 
-6.1 Wazuh Agent Configuration
+**6.1 Wazuh Agent Configuration**
 
 The Wazuh agent was configured to collect and forward the new log source.
 
@@ -177,7 +177,7 @@ JSON log format set for correct field parsing
 Wazuh agent restarted:
 bash
 sudo systemctl restart wazuh-agent
-6.2 Custom Wazuh Rules
+**6.2 Custom Wazuh Rules**
 
 Custom detection rules were created on the Wazuh Manager to classify login events:
 
@@ -189,7 +189,7 @@ bash
 sudo systemctl restart wazuh-manager
 Detection in Wazuh
 
-6.3 Hydra brute force attempt
+**6.3 Hydra brute force attempt**
 
 Using Hydra v9.7 I tested if siem will respond with the pre-configured rules.
 ```bash
