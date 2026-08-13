@@ -159,7 +159,7 @@ Service: HTTP login (index.php)
 Monitoring: Wazuh Agent with a custom <localfile> log source
 Log format: Custom JSON login log
 
-A custom PHP login form with JSON-based attempt logging was built for this test. Setup details are documented separately:[Login Lab](../login-lab-README.md)
+A custom PHP login form with JSON-based attempt logging was built for this test. Setup details are documented separately:[Login Lab](login-lab-README.md)
 
 6.1 Wazuh Agent Configuration
 
