@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project documents the creation of a small **PHP login lab application** used to generate realistic web authentication events for security monitoring and detection testing (e.g.[wazuh](wazuh_siem_project/README.md))
+This project documents the creation of a small **PHP login lab application** using CLaude code to generate realistic web authentication events for security monitoring and detection testing (e.g.[wazuh](wazuh_siem_project/README.md))
 
 
 The application includes:
