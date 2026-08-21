@@ -50,7 +50,7 @@ A styled HTML login form was implemented with `username` and `password` fields, 
 
 Basic CSS was added to center the form in the page and style it as a card (background, border, rounded corners, shadow).
 
-<img width="781" height="516" alt="Screenshot 2026-08-12 111840" src="https://github.com/user-attachments/assets/7363fd2e-6f96-46eb-93ee-c4234c3ebbf8" />
+<img width="581" height="316" alt="Screenshot 2026-08-12 111840" src="https://github.com/user-attachments/assets/7363fd2e-6f96-46eb-93ee-c4234c3ebbf8" />
 
 
 ### 3. Test Account
