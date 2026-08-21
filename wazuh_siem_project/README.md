@@ -38,7 +38,8 @@ Both endpoints are successfully connected and visible in the Wazuh Dashboard.
 
 A Kali Linux virtual machine was deployed as the central Wazuh server using Oracle Virtualbox.
 
-<img width="1314" height="118" alt="image" src="https://github.com/user-attachments/assets/a042753d-5422-4119-ba9e-4d046d986b4f" />
+<img width="639" height="70" alt="image" src="https://github.com/user-attachments/assets/6cb672fc-5126-441e-9486-755d9f6d60fc" />
+
 
 ### 2. Wazuh Installation
 
