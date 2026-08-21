@@ -60,9 +60,7 @@ After installation, the dashboard was successfully accessible.
 ```text
 https://<WAZUH-SERVER-IP>
 ```
-<img width="2145" height="733" alt="ChatGPT Image Aug 11, 2026, 06_42_54 PM" src="https://github.com/user-attachments/assets/5e33d1eb-94ae-48f7-a4d6-128bdf230165" />
-
-
+<img width="3183" height="1088" alt="Screenshot 2026-08-11 182104" src="https://github.com/user-attachments/assets/e58cd989-f2db-4c26-97ce-c4e58fe80ff4" />
 ---
 
 ### 3. Raspberry Pi Agent
@@ -130,8 +128,7 @@ The Raspberry Pi recorded the failed login attempts in its authentication logs, 
 
 The generated authentication activity was successfully detected by Wazuh and appeared in the Wazuh Dashboard as SSH-related security events.
 
-<img width="1575" height="546" alt="Screenshot_2026-08-12_04_36_39" src="https://github.com/user-attachments/assets/7a82f55d-63ad-46e2-9450-c20ec5ba914b" />
-
+<img width="637" height="326" alt="Screenshot 2026-08-11 201701" src="https://github.com/user-attachments/assets/75f2062d-ae9f-434c-87a7-f3f357d9f6e0" />
 
 This confirms that:
 
@@ -196,7 +193,7 @@ Using Hydra v9.7 I tested if siem will respond with the pre-configured rules.
 ```bash
 hydra -l admin -P pass.txt 192.168.3.136 http-post-form "/login.php:username=^USER^&password=^PASS^:F=Invalid username or password "
 ```
-<img width="2841" height="117" alt="image" src="https://github.com/user-attachments/assets/3de0eab4-8661-4402-bfce-eb03c58676aa" />
+<img width="2453" height="242" alt="Screenshot 2026-08-11 201718" src="https://github.com/user-attachments/assets/9661f93f-83fc-4915-93c6-ba2669e5aa2e" />
 
 Alert verified in the Wazuh Dashboard
 Alert confirmed with rule.id 100101, level 7
