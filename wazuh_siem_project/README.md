@@ -175,6 +175,7 @@ JSON log format set for correct field parsing
 Wazuh agent restarted:
 bash
 sudo systemctl restart wazuh-agent
+
 **6.2 Custom Wazuh Rules**
 
 Custom detection rules were created on the Wazuh Manager to classify login events:
