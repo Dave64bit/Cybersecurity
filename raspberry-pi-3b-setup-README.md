@@ -45,7 +45,7 @@ If you want to get your raspberry pi IP adress, use browser and type your router
 <img width="1586" height="211" alt="Screenshot From 2026-09-10 10-35-52" src="https://github.com/user-attachments/assets/136ef860-d21f-4353-8c0f-327a2eba8c22" />
 
 ```bash
-ssh username@192.168.3.10
+ssh username@ip adress
 ```
 
 ### 3. System Update
