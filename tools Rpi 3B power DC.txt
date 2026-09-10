@@ -1,0 +1,18 @@
+tools:
+	-Rpi 3B + power DC adapter 
+	-micro sd card
+	-admin pc
+rpi image:
+	-install rpi image app
+	-choose RPI 
+	-choose OS (Rpi os lite = CLI OS with 64 bit architecture)
+	-select SD card
+	-set up WI-FI SSID and password
+	-enable SSH and set up a password
+	-Flash OS on sd card
+rpi setup
+	-power up rpi 
+	-connect to rpi using login name and ip (ssh dave@192.168.3.10) then enter your password
+	-run [sudo apt update && sudo apt upgrade] to update your rpi
+	-sudo reboot and then reconnect
+	#RPI setup is complete
