@@ -41,9 +41,11 @@ The image was then flashed to the SD card.
 ### 2. First Boot and Remote Login
 
 The SD card was inserted and the Pi powered on. Once it joined the network, it was accessed remotely from the admin PC:
+If you want to get your raspberry pi IP adress, use browser and type your routers IP and look for it, you can view your router ip in wifi settings as default gateway.
+<img width="1586" height="211" alt="Screenshot From 2026-09-10 10-35-52" src="https://github.com/user-attachments/assets/136ef860-d21f-4353-8c0f-327a2eba8c22" />
 
 ```bash
-ssh dave@192.168.3.10
+ssh username@192.168.3.10
 ```
 
 ### 3. System Update
