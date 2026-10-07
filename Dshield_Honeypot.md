@@ -85,7 +85,7 @@ You should see many open ports (for example 22, 23, 80, 5555, 8000, 8080). This 
 
 ## Results and statistics
 
-This section summarizes the data collected by the honeypot during the monitored period: **TO DO (from – to)**.
+This section summarizes the data collected by the honeypot during the monitored period of **24 hours**.
 
 ### Top attacker IP addresses and domains
 <img width="1456" height="1064" alt="Screenshot From 2026-09-10 10-16-59" src="https://github.com/user-attachments/assets/f8e28c6f-d929-48e5-a4f5-06c9f36a7994" />
