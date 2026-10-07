@@ -46,7 +46,7 @@ block access from the honeypot to other networks and allow only outgoing traffic
 forward only the ports that should be exposed on your router,
 do not expose the admin port (12222) to the internet.
 
-📘 Návod na vytvoření VLAN: **NOT ready yet**
+📘 VLAN setup: **NOT ready yet**
 
 ## Installation
 
