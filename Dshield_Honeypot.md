@@ -31,7 +31,7 @@ Tento projekt dokumentuje nasazení honeypotu **DShield** (SANS Internet Storm C
 
 ## Předpoklady
 
-- Připravené Raspberry Pi s Raspberry Pi OS Lite (viz samostatné README)
+- Připravené Raspberry Pi s Raspberry Pi OS Lite [zde](raspberry_pi_setup.md)
 - Aktualizovaný systém a SSH přístup
 - Účet na [isc.sans.edu](https://isc.sans.edu) (e-mail a API klíč najdete v sekci *My Account*)
 
