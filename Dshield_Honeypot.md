@@ -34,6 +34,19 @@ This project describes how to set up a **DShield** honeypot (from the SANS Inter
 - A Raspberry Pi with Raspberry Pi OS Lite ready to use ([setup guide here](raspberry_pi_setup.md))
 - An updated system and SSH access
 - An account on [isc.sans.edu](https://isc.sans.edu) (you can find your email and API key in the *My Account* section)
+  
+Security and network isolation
+
+The honeypot is exposed to the internet on purpose, so it is recommended to separate it from the rest of your network, for example with a VLAN, a DMZ, or firewall rules. DShield is a low-interaction honeypot, so an attacker does not get a real shell. But if the device is ever compromised, isolation stops the attacker from reaching other machines in your LAN. Isolation is not necessary for testing in a closed lab.
+
+Recommended practices:
+
+put the honeypot in a separate network (VLAN / DMZ / guest network),
+block access from the honeypot to other networks and allow only outgoing traffic to the internet,
+forward only the ports that should be exposed on your router,
+do not expose the admin port (12222) to the internet.
+
+📘 Návod na vytvoření VLAN: **NOT ready yet**
 
 ## Installation
 
