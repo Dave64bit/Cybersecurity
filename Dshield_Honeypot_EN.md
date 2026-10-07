@@ -13,7 +13,7 @@ This project describes how to set up a **DShield** honeypot (from the SANS Inter
                           │
                           ▼
                 ┌───────────────────┐
-                │   Raspberry Pi 4  │
+                │   Raspberry Pi 3B  │
                 │  DShield Honeypot │
                 └─────────┬─────────┘
                           │
@@ -24,7 +24,7 @@ This project describes how to set up a **DShield** honeypot (from the SANS Inter
 
 ## Hardware
 
-- Raspberry Pi 4 (1 GB version)
+- Raspberry Pi 3B (1 GB version)
 - microSD card (128 GB)
 - A second computer for SSH access and configuration
 - Internet connection
