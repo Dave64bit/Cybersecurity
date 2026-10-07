@@ -104,27 +104,27 @@ This section summarizes the data collected by the honeypot during the monitored 
 <img width="1456" height="1064" alt="Screenshot From 2026-09-10 10-16-59" src="https://github.com/user-attachments/assets/f8e28c6f-d929-48e5-a4f5-06c9f36a7994" />
 
 
-***The chart shows the most active source IPs, which include both legitimate scanning platforms such as Shodan or Censys that map exposed devices for statistics, and real attackers or botnet nodes. Individual addresses can be checked on services like VirusTotal or AbuseIPDB, where known scanners are labeled and malicious hosts usually have a history of reports.***
+*The chart shows the most active source IPs, which include both legitimate scanning platforms such as Shodan or Censys that map exposed devices for statistics, and real attackers or botnet nodes. Individual addresses can be checked on services like VirusTotal or AbuseIPDB, where known scanners are labeled and malicious hosts usually have a history of reports.*
 
 ### SSH / Telnet passwords
 
 <img width="1119" height="1004" alt="Screenshot From 2026-10-06 21-59-57" src="https://github.com/user-attachments/assets/1560ee4a-cc5e-4e1d-b6db-006b57eb8f04" />
 
-*Description: TO DO (for example, the most common username and password combinations and typical dictionary attacks).*
+*These are the usernames and passwords attackers tried against the fake SSH and Telnet services. Most are automated dictionary attacks using default and weak credentials such as `root` or `admin`, typical for routers and IoT devices. It shows why default passwords must be changed and SSH should not be exposed with password authentication.*
 
 ### Countries of origin
 
 <img width="1456" height="756" alt="Screenshot From 2026-09-10 10-15-58" src="https://github.com/user-attachments/assets/24a38a7a-1304-428b-8b76-559d2797f5c8" />
 
 
-*Description: TO DO (for example, the top countries by number of attempts and their share).*
+*The statistics show the countries from which connections originated, based on the registered location of the source IP. This does not reveal where the attacker really is, since VPNs, proxies and compromised servers are commonly used.*
 
 ### Targeted ports
 
 <img width="1456" height="823" alt="Screenshot From 2026-09-10 10-16-42" src="https://github.com/user-attachments/assets/ffafc8ca-4b23-43fd-bf63-b500aa27c113" />
 
 
-*Description: TO DO (for example, the most scanned ports and the services the attackers expected to find on them).*
+*SSH (22) and Telnet (23) are the most targeted because they allow remote control of a device, while web ports such as 80 and 8080 are probed for vulnerable admin panels. The pattern confirms that most traffic comes from automated scanners sweeping the internet for a few commonly vulnerable services.*
 
 ### Summary
 
