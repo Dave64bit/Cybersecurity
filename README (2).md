@@ -88,8 +88,8 @@ Očekává se velké množství otevřených portů (např. 22, 23, 80, 5555, 80
 Níže jsou shrnuty data nasbíraná honeypotem za sledované období: **DOPLNIT (od – do)**.
 
 ### Hlavní IP adresy a domény útočníků
+<img width="1456" height="1064" alt="Screenshot From 2026-09-10 10-16-59" src="https://github.com/user-attachments/assets/f8e28c6f-d929-48e5-a4f5-06c9f36a7994" />
 
-![Top IP adresy a domény útočníků](images/top-ip-domains.png)
 
 *Popis: DOPLNIT (např. nejaktivnější zdrojové IP, jejich reverzní DNS / domény, případná organizace či ASN).*
 
