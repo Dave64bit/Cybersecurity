@@ -115,12 +115,14 @@ This section summarizes the data collected by the honeypot during the monitored 
 
 ### Summary
 
-TO DO – the main findings, interesting patterns, and any recommendations.
+This Honeypot project is one of the most usefull ways to get data of attackers and their behavior, and it is also used in companies for data collection, blocking IPs and making decoys. 
 
 ## Notes
 
 - The data in the DShield dashboard (*My Reports*) is updated with a delay of about 30 minutes.
 - All testing was done only in a controlled lab environment.
+- Before deploying be sure that its compleately safe and attackers can't gain access to your home LAN.
+- If you find any mistakes in this tutorial, please let me know.
 
 ---
 
