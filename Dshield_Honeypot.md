@@ -13,7 +13,7 @@ Tento projekt dokumentuje nasazení honeypotu **DShield** (SANS Internet Storm C
                           │
                           ▼
                 ┌───────────────────┐
-                │   Raspberry Pi 4  │
+                │   Raspberry Pi 3B  │
                 │  DShield Honeypot │
                 └─────────┬─────────┘
                           │
@@ -24,7 +24,7 @@ Tento projekt dokumentuje nasazení honeypotu **DShield** (SANS Internet Storm C
 
 ## Použitý hardware
 
-- Raspberry Pi 4 (1 GB verze)
+- Raspberry Pi 3B (1 GB verze)
 - MicroSD karta (128 GB)
 - Druhý počítač pro SSH přístup a konfiguraci
 - Připojení k internetu
