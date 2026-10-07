@@ -104,7 +104,7 @@ This section summarizes the data collected by the honeypot during the monitored 
 <img width="1456" height="1064" alt="Screenshot From 2026-09-10 10-16-59" src="https://github.com/user-attachments/assets/f8e28c6f-d929-48e5-a4f5-06c9f36a7994" />
 
 
-*Description: TO DO (for example, the most active source IPs, their reverse DNS / domains, and the organization or ASN).*
+***The chart shows the most active source IPs, which include both legitimate scanning platforms such as Shodan or Censys that map exposed devices for statistics, and real attackers or botnet nodes. Individual addresses can be checked on services like VirusTotal or AbuseIPDB, where known scanners are labeled and malicious hosts usually have a history of reports.***
 
 ### SSH / Telnet passwords
 
