@@ -95,19 +95,19 @@ Níže jsou shrnuty data nasbíraná honeypotem za sledované období: **DOPLNIT
 
 ### SSH / Telnet hesla
 
-![Nejčastěji zkoušená SSH/Telnet hesla](images/ssh-telnet-passwords.png)
+<img width="1119" height="1004" alt="Screenshot From 2026-10-06 21-59-57" src="https://github.com/user-attachments/assets/1560ee4a-cc5e-4e1d-b6db-006b57eb8f04" />
 
 *Popis: DOPLNIT (např. nejčastější kombinace uživatelských jmen a hesel, typické slovníkové útoky).*
 
 ### Země původu útoků
+<img width="1456" height="756" alt="Screenshot From 2026-09-10 10-15-58" src="https://github.com/user-attachments/assets/24a38a7a-1304-428b-8b76-559d2797f5c8" />
 
-![Země původu útoků](images/countries.png)
 
 *Popis: DOPLNIT (např. top země podle počtu pokusů a jejich podíl).*
 
 ### Cílené porty
+<img width="1456" height="823" alt="Screenshot From 2026-09-10 10-16-42" src="https://github.com/user-attachments/assets/ffafc8ca-4b23-43fd-bf63-b500aa27c113" />
 
-![Nejčastěji cílené porty](images/ports.png)
 
 *Popis: DOPLNIT (např. nejčastěji skenované porty a služby, které na nich útočníci očekávali).*
 
