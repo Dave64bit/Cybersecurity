@@ -35,7 +35,7 @@ This project describes how to set up a **DShield** honeypot (from the SANS Inter
 - An updated system and SSH access
 - An account on [isc.sans.edu](https://isc.sans.edu) (you can find your email and API key in the *My Account* section)
   
-Security and network isolation
+## Security and network isolation
 
 The honeypot is exposed to the internet on purpose, so it is recommended to separate it from the rest of your network, for example with a VLAN, a DMZ, or firewall rules. DShield is a low-interaction honeypot, so an attacker does not get a real shell. But if the device is ever compromised, isolation stops the attacker from reaching other machines in your LAN. Isolation is not necessary for testing in a closed lab.
 
